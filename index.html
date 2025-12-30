@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -35,7 +35,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(11, 37, 69, 0.7);
+            background-color: rgba(11, 37, 69, 0.85);
             z-index: 1000;
             animation: fadeIn 0.3s ease-in;
         }
@@ -69,9 +69,19 @@
         .popup-overlay.show {
             display: block;
         }
-        /* Smooth scroll */
         html {
             scroll-behavior: smooth;
+        }
+        .icon-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00A3FF;
         }
     </style>
 </head>
@@ -81,13 +91,8 @@
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="flex items-center justify-between h-20">
                 <div class="text-2xl font-bold tracking-tight">Beeonix AI</div>
-                <div class="hidden lg:flex items-center space-x-10">
-                    <a href="#features" class="hover:text-cyan-400 transition-colors text-sm font-medium">Features</a>
-                    <a href="#about" class="hover:text-cyan-400 transition-colors text-sm font-medium">About</a>
-                    <a href="#contact" class="hover:text-cyan-400 transition-colors text-sm font-medium">Contact</a>
-                </div>
                 <button onclick="document.querySelector('#hero').scrollIntoView({behavior: 'smooth', block: 'end'})" class="cyan-bg hover:bg-cyan-600 text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg">
-                    Request Demo
+                    Request a Free Demo
                 </button>
             </div>
         </div>
@@ -96,12 +101,12 @@
     <!-- Hero Section -->
     <section id="hero" class="bg-white pt-24 pb-32 md:pt-32 md:pb-40 px-6 md:px-12">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-4xl mx-auto">
+            <div class="text-center max-w-5xl mx-auto">
                 <h1 class="text-5xl md:text-7xl font-bold navy-text mb-8 leading-tight tracking-tight">
                     From Insight to Autonomous Action
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto">
-                    The Enterprise Agentic Platform for Banking. Orchestrate secure, outcome-driven AI agents that understand context and execute workflows.
+                <p class="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed max-w-4xl mx-auto">
+                    The LLM-Agnostic, Enterprise Autonomous Agent Platform. Deploy outcome-driven agents that reason across systems and execute banking workflows with governed autonomy.
                 </p>
                 <button class="cyan-bg hover:bg-cyan-600 text-white px-10 py-4 rounded-lg text-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                     Request a Free Demo
@@ -110,67 +115,327 @@
         </div>
     </section>
 
-    <!-- Value Grid Section -->
-    <section id="features" class="light-gray-bg py-24 md:py-32 px-6 md:px-12">
+    <!-- Core Capabilities Section (8-Highlights Grid) -->
+    <section class="light-gray-bg py-24 md:py-32 px-6 md:px-12">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl md:text-5xl font-bold navy-text text-center mb-20">
-                Why Choose Beeonix AI
+                Core Capabilities
             </h2>
-            <div class="grid md:grid-cols-3 gap-8 md:gap-10">
-                <!-- Card 1 -->
-                <div class="bg-white p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
-                    <div class="w-20 h-20 cyan-bg rounded-xl flex items-center justify-center mb-8">
-                        <i class="fas fa-shield-alt text-white text-3xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Capability 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="target" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold navy-text mb-5">Governed Autonomy</h3>
-                    <p class="text-gray-600 leading-relaxed text-base">
-                        Human-in-the-loop controls and strict policy engines ensure your AI agents operate within defined boundaries while maintaining operational efficiency.
+                    <h3 class="text-xl font-bold navy-text mb-4">Targeted/Outcome-Driven</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Agents designed with specific outcomes in mind, ensuring measurable results.
                     </p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-white p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
-                    <div class="w-20 h-20 cyan-bg rounded-xl flex items-center justify-center mb-8">
-                        <i class="fas fa-puzzle-piece text-white text-3xl"></i>
+                <!-- Capability 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="users" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold navy-text mb-5">Composable Architecture</h3>
-                    <p class="text-gray-600 leading-relaxed text-base">
-                        Pre-built connectors for Banking APIs and RPA enable rapid integration and seamless workflow orchestration across your existing systems.
+                    <h3 class="text-xl font-bold navy-text mb-4">Inter-Agent Collaboration</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Agents work together seamlessly, sharing context and coordinating tasks.
                     </p>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="bg-white p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
-                    <div class="w-20 h-20 cyan-bg rounded-xl flex items-center justify-center mb-8">
-                        <i class="fas fa-cloud text-white text-3xl"></i>
+                <!-- Capability 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="workflow" class="w-8 h-8 text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold navy-text mb-5">Flexible Deployment</h3>
-                    <p class="text-gray-600 leading-relaxed text-base">
-                        Cloud, On-premise, or Hybrid implementation options give you the flexibility to deploy according to your security and compliance requirements.
+                    <h3 class="text-xl font-bold navy-text mb-4">Reusable Workflows</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Build once, deploy everywhere. Reusable workflow components accelerate development.
+                    </p>
+                </div>
+
+                <!-- Capability 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="layers" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold navy-text mb-4">Diverse Capabilities</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Speech-to-Text, Vision, Documents, and more—all integrated seamlessly.
+                    </p>
+                </div>
+
+                <!-- Capability 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="cpu" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold navy-text mb-4">LLM-Agnostic Design</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Works with any LLM provider. Switch models without changing your agents.
+                    </p>
+                </div>
+
+                <!-- Capability 6 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="cloud" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold navy-text mb-4">Flexible Deployment</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        On-premise, Cloud, or Hybrid—deploy where your security needs require.
+                    </p>
+                </div>
+
+                <!-- Capability 7 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="brain" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold navy-text mb-4">Beyond Gen AI</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Traditional ML models integrated alongside generative AI for comprehensive intelligence.
+                    </p>
+                </div>
+
+                <!-- Capability 8 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="zap" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold navy-text mb-4">Accelerated Time-to-Value</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        Get agents into production faster with pre-built components and templates.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof Section -->
+    <!-- RM Buddy & Agent Suite Section -->
     <section class="bg-white py-24 md:py-32 px-6 md:px-12">
         <div class="max-w-7xl mx-auto">
-            <div class="bg-gradient-to-r from-cyan-50 via-blue-50 to-cyan-50 p-16 md:p-20 rounded-3xl border border-cyan-100">
-                <div class="text-center max-w-4xl mx-auto">
-                    <div class="flex justify-center mb-8">
-                        <i class="fas fa-quote-left text-5xl cyan-text opacity-40"></i>
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold navy-text mb-6">
+                    RM Buddy & Agent Suite
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive AI-powered tools designed to enhance relationship management and automate banking workflows.
+                </p>
+            </div>
+
+            <!-- RM Buddy Interface Modules -->
+            <div class="mb-20">
+                <h3 class="text-3xl font-bold navy-text mb-12 text-center">RM Buddy Interface Modules</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Account Briefing -->
+                    <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-10 rounded-2xl border border-cyan-100">
+                        <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold navy-text mb-4">Account Briefing</h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Holdings Overview</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Earnings Calls Analysis</span>
+                            </li>
+                        </ul>
                     </div>
-                    <p class="text-3xl md:text-4xl font-semibold navy-text mb-8 leading-relaxed">
-                        Trusted by leading banks in the UAE to reduce manual query load by 70%.
+
+                    <!-- Meeting Utilities -->
+                    <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-10 rounded-2xl border border-cyan-100">
+                        <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="video" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold navy-text mb-4">Meeting Utilities</h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Product Q&A Assistant</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Virtual RM Support</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Post-Meeting -->
+                    <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-10 rounded-2xl border border-cyan-100">
+                        <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                            <i data-lucide="file-check" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold navy-text mb-4">Post-Meeting</h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Engagement Analyser</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                                <span>Compliance Monitor</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Illustrative Agents -->
+            <div>
+                <h3 class="text-3xl font-bold navy-text mb-12 text-center">Illustrative Agents</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <div class="bg-light-gray-bg p-6 rounded-xl border border-gray-200 text-center">
+                        <i data-lucide="mail" class="w-10 h-10 text-cyan-600 mx-auto mb-4"></i>
+                        <h5 class="font-semibold navy-text">Communication Drafting</h5>
+                    </div>
+                    <div class="bg-light-gray-bg p-6 rounded-xl border border-gray-200 text-center">
+                        <i data-lucide="message-circle" class="w-10 h-10 text-cyan-600 mx-auto mb-4"></i>
+                        <h5 class="font-semibold navy-text">Automated Query Handling</h5>
+                    </div>
+                    <div class="bg-light-gray-bg p-6 rounded-xl border border-gray-200 text-center">
+                        <i data-lucide="trending-up" class="w-10 h-10 text-cyan-600 mx-auto mb-4"></i>
+                        <h5 class="font-semibold navy-text">NBA Agent</h5>
+                    </div>
+                    <div class="bg-light-gray-bg p-6 rounded-xl border border-gray-200 text-center">
+                        <i data-lucide="pie-chart" class="w-10 h-10 text-cyan-600 mx-auto mb-4"></i>
+                        <h5 class="font-semibold navy-text">Portfolio Summarizer</h5>
+                    </div>
+                    <div class="bg-light-gray-bg p-6 rounded-xl border border-gray-200 text-center">
+                        <i data-lucide="search" class="w-10 h-10 text-cyan-600 mx-auto mb-4"></i>
+                        <h5 class="font-semibold navy-text">Research Assistant</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Architecture Section -->
+    <section class="light-gray-bg py-24 md:py-32 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold navy-text text-center mb-20">
+                How It Works
+            </h2>
+            <div class="bg-white p-12 md:p-16 rounded-3xl shadow-lg">
+                <!-- Flow Diagram -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
+                    <!-- Step 1: Data Ingestion -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 cyan-bg rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="database" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold navy-text mb-4">Data Ingestion</h3>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>CRM Systems</li>
+                            <li>Transactions</li>
+                            <li>Web Data</li>
+                        </ul>
+                    </div>
+
+                    <!-- Arrow 1 -->
+                    <div class="flow-arrow hidden md:flex justify-center">
+                        <i data-lucide="arrow-right" class="w-8 h-8"></i>
+                    </div>
+
+                    <!-- Step 2: Centralized Store -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 cyan-bg rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="server" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold navy-text mb-4">Beeonix Centralized Store</h3>
+                        <p class="text-sm text-gray-600">Unified data repository</p>
+                    </div>
+
+                    <!-- Arrow 2 -->
+                    <div class="flow-arrow hidden md:flex justify-center">
+                        <i data-lucide="arrow-right" class="w-8 h-8"></i>
+                    </div>
+
+                    <!-- Step 3: Agent Processing -->
+                    <div class="text-center">
+                        <div class="w-20 h-20 cyan-bg rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="cpu" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold navy-text mb-4">Agent Processing</h3>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>LLMs</li>
+                            <li>AI/ML Signals</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Final Arrow and Output -->
+                <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                    <div class="flow-arrow">
+                        <i data-lucide="arrow-down" class="w-8 h-8 md:hidden"></i>
+                        <i data-lucide="arrow-right" class="w-8 h-8 hidden md:block"></i>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-20 h-20 cyan-bg rounded-2xl flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="bar-chart" class="w-10 h-10 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold navy-text mb-4">Actionable Outputs</h3>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li>Dashboards</li>
+                            <li>Personalized Reports</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="bg-white py-24 md:py-32 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold navy-text text-center mb-20">
+                Proven Results
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 md:gap-10">
+                <!-- Case Study 1: Banking UAE -->
+                <div class="bg-light-gray-bg p-10 rounded-2xl border border-gray-200">
+                    <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="building-2" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold navy-text mb-4">Banking (UAE)</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        <strong>Automated Customer Query Resolution</strong>
                     </p>
-                    <div class="flex justify-center items-center space-x-1 mt-10">
-                        <i class="fas fa-star text-yellow-400 text-xl"></i>
-                        <i class="fas fa-star text-yellow-400 text-xl"></i>
-                        <i class="fas fa-star text-yellow-400 text-xl"></i>
-                        <i class="fas fa-star text-yellow-400 text-xl"></i>
-                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                    <p class="text-gray-600 leading-relaxed">
+                        Successfully reduced reliance on CSRs/RMs by automating routine customer queries, improving response times and operational efficiency.
+                    </p>
+                </div>
+
+                <!-- Case Study 2: Private Equity Asia -->
+                <div class="bg-light-gray-bg p-10 rounded-2xl border border-gray-200">
+                    <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
                     </div>
+                    <h3 class="text-2xl font-bold navy-text mb-4">Private Equity (Asia)</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        <strong>Legal Compliance/NDA Review</strong>
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Leveraged Gen AI to identify non-conforming clauses in legal documents with high accuracy, streamlining compliance workflows.
+                    </p>
+                </div>
+
+                <!-- Case Study 3: Insurer WhatsApp -->
+                <div class="bg-light-gray-bg p-10 rounded-2xl border border-gray-200">
+                    <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="message-square" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold navy-text mb-4">Insurer (WhatsApp)</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        <strong>AI Assistant for Claims & Queries</strong>
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Deployed AI assistant on WhatsApp platform to handle claims processing and customer queries, providing 24/7 support.
+                    </p>
                 </div>
             </div>
         </div>
@@ -192,41 +457,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-16 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <div class="text-2xl font-bold text-white mb-4">Beeonix AI</div>
-                    <p class="text-sm leading-relaxed">Enterprise Agentic Platform for Banking</p>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-5 text-base">Product</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#features" class="hover:text-cyan-400 transition-colors">Features</a></li>
-                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Pricing</a></li>
-                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Security</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-5 text-base">Company</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#about" class="hover:text-cyan-400 transition-colors">About</a></li>
-                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Blog</a></li>
-                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Careers</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-5 text-base">Contact</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#contact" class="hover:text-cyan-400 transition-colors">Support</a></li>
-                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Sales</a></li>
-                        <li><a href="#" class="hover:text-cyan-400 transition-colors">Partners</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-sm">
-                <p>&copy; 2024 Beeonix AI. All rights reserved.</p>
-            </div>
+    <footer class="bg-gray-900 text-gray-400 py-12 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-sm">&copy; 2025 BigTapp AI. Proprietary & Confidential.</p>
         </div>
     </footer>
 
@@ -234,35 +467,46 @@
     <div id="exitIntentPopup" class="popup-overlay">
         <div class="popup-content">
             <button id="closePopup" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer">
-                <i class="fas fa-times text-2xl"></i>
+                <i data-lucide="x" class="w-6 h-6"></i>
             </button>
             <div class="text-center">
                 <div class="w-20 h-20 cyan-bg rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-chart-line text-white text-3xl"></i>
+                    <i data-lucide="presentation" class="w-10 h-10 text-white"></i>
                 </div>
                 <h3 class="text-3xl font-bold navy-text mb-4">
-                    Fragmented Systems?
+                    Fragmented Systems & Data
                 </h3>
                 <p class="text-gray-600 mb-8 leading-relaxed text-lg">
-                    Join our Webinar on Siloed Data in Banking.
+                    Siloed internal systems hinder effective service.
                 </p>
                 <button class="cyan-bg hover:bg-cyan-600 text-white px-10 py-4 rounded-lg font-semibold transition-colors w-full text-lg">
-                    Join Free Webinar
+                    Join Free Webinar for RMs in Banking
                 </button>
             </div>
         </div>
     </div>
 
     <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
         // Exit Intent Popup Logic
         let exitIntentTriggered = false;
         const popup = document.getElementById('exitIntentPopup');
         const closeBtn = document.getElementById('closePopup');
 
-        // Track mouse movement to detect exit intent (moving to top of viewport)
+        // Track mouse movement to detect exit intent (mouse leaves top of viewport)
         document.addEventListener('mousemove', function(e) {
-            // Check if mouse is moving towards the top of the viewport (exit intent)
+            // Check if mouse is moving towards/leaving the top of the viewport (exit intent)
             if (e.clientY <= 5 && !exitIntentTriggered) {
+                exitIntentTriggered = true;
+                popup.classList.add('show');
+            }
+        });
+
+        // Also detect mouseleave event on document for better exit intent detection
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY <= 0 && !exitIntentTriggered) {
                 exitIntentTriggered = true;
                 popup.classList.add('show');
             }
@@ -278,20 +522,6 @@
             if (e.target === popup) {
                 popup.classList.remove('show');
             }
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
         });
 
         // Add click handlers for CTA buttons
