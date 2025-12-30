@@ -12,27 +12,54 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-image: url('images/pexels-pixabay-373543.jpg');
+        }
+        .hero-background {
+            background-image: url('images/bg-hero.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
             background-repeat: no-repeat;
+            position: relative;
         }
-        body::before {
+        .hero-background::before {
             content: '';
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            z-index: -1;
+            background: rgba(255, 255, 255, 0.70);
+            z-index: 0;
+        }
+        .hero-background > * {
+            position: relative;
+            z-index: 1;
+        }
+        .section-background {
+            background-image: url('images/bg-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .section-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(248, 250, 252, 0.80);
+            z-index: 0;
+        }
+        .section-background > * {
+            position: relative;
+            z-index: 1;
         }
         .navy-text {
             color: #0B2545;
         }
         .navy-bg {
-            background-color: rgba(11, 37, 69, 0.95);
+            background-color: #0B2545;
         }
         .cyan-text {
             color: #00A3FF;
@@ -41,10 +68,7 @@
             background-color: #00A3FF;
         }
         .light-gray-bg {
-            background-color: rgba(248, 250, 252, 0.95);
-        }
-        section.bg-white, .bg-white-section {
-            background-color: rgba(255, 255, 255, 0.95) !important;
+            background-color: #F8FAFC;
         }
         .popup-overlay {
             display: none;
@@ -121,7 +145,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="bg-white pt-24 pb-32 md:pt-32 md:pb-40 px-6 md:px-12">
+    <section id="hero" class="hero-background pt-24 pb-32 md:pt-32 md:pb-40 px-6 md:px-12">
         <div class="max-w-7xl mx-auto">
             <div class="text-center max-w-5xl mx-auto">
                 <h1 class="text-5xl md:text-7xl font-bold navy-text mb-8 leading-tight tracking-tight">
@@ -236,7 +260,7 @@
     </section>
 
     <!-- Platform Variants & LLM Providers Section -->
-    <section class="bg-white py-24 md:py-32 px-6 md:px-12">
+    <section class="section-background py-24 md:py-32 px-6 md:px-12">
         <div class="max-w-7xl mx-auto">
             <!-- Platform Variants -->
             <div class="mb-24">
@@ -251,7 +275,7 @@
                     <div class="group relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-cyan-300 hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[180px]">
                         <div class="text-center w-full">
                             <div class="w-full h-24 flex items-center justify-center mb-4">
-                                <img src="images/platforms/asana.png" alt="Asana" class="w-full h-auto object-contain max-h-20">
+                                <img src="images/png-clipart-logo-asana-brand-mobile-app-product-project-manager-text-logo.png" alt="Asana" class="w-full h-auto object-contain max-h-20">
                             </div>
                             <p class="text-sm font-semibold navy-text">Asana</p>
                         </div>
@@ -261,7 +285,7 @@
                     <div class="group relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-cyan-300 hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[180px]">
                         <div class="text-center w-full">
                             <div class="w-full h-24 flex items-center justify-center mb-4">
-                                <img src="images/platforms/basecamp.png" alt="Basecamp" class="w-full h-auto object-contain max-h-20">
+                                <img src="images/basecamp logo.png" alt="Basecamp" class="w-full h-auto object-contain max-h-20">
                             </div>
                             <p class="text-sm font-semibold navy-text">Basecamp</p>
                         </div>
@@ -271,7 +295,7 @@
                     <div class="group relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-cyan-300 hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[180px]">
                         <div class="text-center w-full">
                             <div class="w-full h-24 flex items-center justify-center mb-4">
-                                <img src="images/platforms/slack.png" alt="Slack" class="w-full h-auto object-contain max-h-20">
+                                <img src="images/slack logo.png" alt="Slack" class="w-full h-auto object-contain max-h-20">
                             </div>
                             <p class="text-sm font-semibold navy-text">Slack</p>
                         </div>
@@ -281,7 +305,7 @@
                     <div class="group relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-cyan-300 hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[180px]">
                         <div class="text-center w-full">
                             <div class="w-full h-24 flex items-center justify-center mb-4">
-                                <img src="images/platforms/trello.png" alt="Trello" class="w-full h-auto object-contain max-h-20">
+                                <img src="images/trello logo.webp" alt="Trello" class="w-full h-auto object-contain max-h-20">
                             </div>
                             <p class="text-sm font-semibold navy-text">Trello</p>
                         </div>
@@ -297,7 +321,7 @@
                     </h2>
                     <div class="w-24 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto"></div>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 md:gap-6 justify-items-center max-w-6xl mx-auto">
                     <!-- OpenAI -->
                     <div class="group flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-gray-200 hover:border-cyan-300 hover:shadow-lg transition-all duration-300">
                         <div class="w-28 h-20 bg-white rounded-xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl transition-shadow border border-gray-100">
@@ -382,100 +406,101 @@
     </section>
 
     <!-- RM Buddy & Agent Suite Section -->
-    <section class="bg-white py-24 md:py-32 px-6 md:px-12">
+    <section class="bg-white py-16 md:py-20 px-6 md:px-12">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold navy-text mb-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold navy-text mb-3">
                     RM Buddy & Agent Suite
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Comprehensive AI-powered tools designed to enhance relationship management and automate banking workflows.
-                </p>
+                <div class="w-20 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto"></div>
             </div>
 
-            <!-- RM Buddy Interface Modules -->
-            <div class="mb-20">
-                <h3 class="text-3xl font-bold navy-text mb-12 text-center">RM Buddy Interface Modules</h3>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Account Briefing -->
-                    <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-10 rounded-2xl border border-cyan-100">
-                        <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
-                            <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
+            <!-- RM Buddy Interface Modules - Compact Grid -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <!-- Account Briefing -->
+                <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-xl border border-cyan-100 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 cyan-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="briefcase" class="w-6 h-6 text-white"></i>
                         </div>
-                        <h4 class="text-2xl font-bold navy-text mb-4">Account Briefing</h4>
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-start">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                                <span>Holdings Overview</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                                <span>Earnings Calls Analysis</span>
-                            </li>
-                        </ul>
+                        <h4 class="text-lg font-bold navy-text">Account Briefing</h4>
                     </div>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-4 h-4 text-cyan-600 mr-2 flex-shrink-0"></i>
+                            <span>Holdings Overview</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-4 h-4 text-cyan-600 mr-2 flex-shrink-0"></i>
+                            <span>Earnings Calls Analysis</span>
+                        </li>
+                    </ul>
+                </div>
 
-                    <!-- Meeting Utilities -->
-                    <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-10 rounded-2xl border border-cyan-100">
-                        <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
-                            <i data-lucide="video" class="w-8 h-8 text-white"></i>
+                <!-- Meeting Utilities -->
+                <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-xl border border-cyan-100 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 cyan-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="video" class="w-6 h-6 text-white"></i>
                         </div>
-                        <h4 class="text-2xl font-bold navy-text mb-4">Meeting Utilities</h4>
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-start">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                                <span>Product Q&A Assistant</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                                <span>Virtual RM Support</span>
-                            </li>
-                        </ul>
+                        <h4 class="text-lg font-bold navy-text">Meeting Utilities</h4>
                     </div>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-4 h-4 text-cyan-600 mr-2 flex-shrink-0"></i>
+                            <span>Product Q&A Assistant</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-4 h-4 text-cyan-600 mr-2 flex-shrink-0"></i>
+                            <span>Virtual RM Support</span>
+                        </li>
+                    </ul>
+                </div>
 
-                    <!-- Post-Meeting -->
-                    <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-10 rounded-2xl border border-cyan-100">
-                        <div class="w-16 h-16 cyan-bg rounded-xl flex items-center justify-center mb-6">
-                            <i data-lucide="file-check" class="w-8 h-8 text-white"></i>
+                <!-- Post-Meeting -->
+                <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-6 rounded-xl border border-cyan-100 hover:shadow-lg transition-all duration-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 cyan-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="file-check" class="w-6 h-6 text-white"></i>
                         </div>
-                        <h4 class="text-2xl font-bold navy-text mb-4">Post-Meeting</h4>
-                        <ul class="space-y-3 text-gray-600">
-                            <li class="flex items-start">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                                <span>Engagement Analyser</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-cyan-600 mr-2 mt-0.5 flex-shrink-0"></i>
-                                <span>Compliance Monitor</span>
-                            </li>
-                        </ul>
+                        <h4 class="text-lg font-bold navy-text">Post-Meeting</h4>
                     </div>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-4 h-4 text-cyan-600 mr-2 flex-shrink-0"></i>
+                            <span>Engagement Analyser</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check" class="w-4 h-4 text-cyan-600 mr-2 flex-shrink-0"></i>
+                            <span>Compliance Monitor</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Illustrative Agents -->
+            <!-- Illustrative Agents - Compact Grid -->
             <div>
-                <h3 class="text-3xl font-bold navy-text mb-12 text-center">Illustrative Agents</h3>
-                <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-                    <div class="bg-light-gray-bg p-6 rounded-xl border border-gray-200 text-center">
-                        <i data-lucide="mail" class="w-10 h-10 text-cyan-600 mx-auto mb-4"></i>
-                        <h5 class="font-semibold navy-text">Communication Drafting</h5>
+                <h3 class="text-xl font-bold navy-text mb-6 text-center">Illustrative Agents</h3>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <div class="bg-light-gray-bg p-5 rounded-lg border border-gray-200 text-center hover:border-cyan-300 hover:shadow-md transition-all duration-300">
+                        <i data-lucide="mail" class="w-8 h-8 text-cyan-600 mx-auto mb-3"></i>
+                        <h5 class="text-sm font-semibold navy-text">Communication Drafting</h5>
                     </div>
-                    <div class="bg-light-gray-bg p-6 rounded-xl border border-gray-200 text-center">
-                        <i data-lucide="message-circle" class="w-10 h-10 text-cyan-600 mx-auto mb-4"></i>
-                        <h5 class="font-semibold navy-text">Automated Query Handling</h5>
+                    <div class="bg-light-gray-bg p-5 rounded-lg border border-gray-200 text-center hover:border-cyan-300 hover:shadow-md transition-all duration-300">
+                        <i data-lucide="message-circle" class="w-8 h-8 text-cyan-600 mx-auto mb-3"></i>
+                        <h5 class="text-sm font-semibold navy-text">Automated Query Handling</h5>
                     </div>
-                    <div class="bg-light-gray-bg p-6 rounded-xl border border-gray-200 text-center">
-                        <i data-lucide="trending-up" class="w-10 h-10 text-cyan-600 mx-auto mb-4"></i>
-                        <h5 class="font-semibold navy-text">NBA Agent</h5>
+                    <div class="bg-light-gray-bg p-5 rounded-lg border border-gray-200 text-center hover:border-cyan-300 hover:shadow-md transition-all duration-300">
+                        <i data-lucide="trending-up" class="w-8 h-8 text-cyan-600 mx-auto mb-3"></i>
+                        <h5 class="text-sm font-semibold navy-text">NBA Agent</h5>
                     </div>
-                    <div class="bg-light-gray-bg p-6 rounded-xl border border-gray-200 text-center">
-                        <i data-lucide="pie-chart" class="w-10 h-10 text-cyan-600 mx-auto mb-4"></i>
-                        <h5 class="font-semibold navy-text">Portfolio Summarizer</h5>
+                    <div class="bg-light-gray-bg p-5 rounded-lg border border-gray-200 text-center hover:border-cyan-300 hover:shadow-md transition-all duration-300">
+                        <i data-lucide="pie-chart" class="w-8 h-8 text-cyan-600 mx-auto mb-3"></i>
+                        <h5 class="text-sm font-semibold navy-text">Portfolio Summarizer</h5>
                     </div>
-                    <div class="bg-light-gray-bg p-6 rounded-xl border border-gray-200 text-center">
-                        <i data-lucide="search" class="w-10 h-10 text-cyan-600 mx-auto mb-4"></i>
-                        <h5 class="font-semibold navy-text">Research Assistant</h5>
+                    <div class="bg-light-gray-bg p-5 rounded-lg border border-gray-200 text-center hover:border-cyan-300 hover:shadow-md transition-all duration-300">
+                        <i data-lucide="search" class="w-8 h-8 text-cyan-600 mx-auto mb-3"></i>
+                        <h5 class="text-sm font-semibold navy-text">Research Assistant</h5>
                     </div>
                 </div>
             </div>
