@@ -12,12 +12,27 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-image: url('images/pexels-pixabay-373543.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: -1;
         }
         .navy-text {
             color: #0B2545;
         }
         .navy-bg {
-            background-color: #0B2545;
+            background-color: rgba(11, 37, 69, 0.95);
         }
         .cyan-text {
             color: #00A3FF;
@@ -26,7 +41,10 @@
             background-color: #00A3FF;
         }
         .light-gray-bg {
-            background-color: #F8FAFC;
+            background-color: rgba(248, 250, 252, 0.95);
+        }
+        section.bg-white, .bg-white-section {
+            background-color: rgba(255, 255, 255, 0.95) !important;
         }
         .popup-overlay {
             display: none;
@@ -48,8 +66,10 @@
             padding: 3rem;
             border-radius: 16px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            max-width: 560px;
+            max-width: 640px;
             width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
             animation: slideUp 0.4s ease-out;
         }
         @keyframes fadeIn {
@@ -90,7 +110,9 @@
     <nav class="navy-bg text-white sticky top-0 z-50 shadow-lg">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="flex items-center justify-between h-20">
-                <div class="text-2xl font-bold tracking-tight">Beeonix AI</div>
+                <div class="flex items-center">
+                    <img src="images/Bigtap logo_CMYK 1.png" alt="BigTapp AI" class="h-10 md:h-12 w-auto object-contain">
+                </div>
                 <button onclick="document.querySelector('#hero').scrollIntoView({behavior: 'smooth', block: 'end'})" class="cyan-bg hover:bg-cyan-600 text-white px-6 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg">
                     Request a Free Demo
                 </button>
@@ -225,42 +247,43 @@
                     <div class="w-24 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto"></div>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-                    <!-- Image-ready containers for Platform Variants -->
-                    <!-- Replace these divs with <img> tags when images are available -->
+                    <!-- Asana -->
                     <div class="group relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-cyan-300 hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[180px]">
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-50 transition-colors">
-                                <i data-lucide="image" class="w-10 h-10 text-gray-400"></i>
+                        <div class="text-center w-full">
+                            <div class="w-full h-24 flex items-center justify-center mb-4">
+                                <img src="images/platforms/asana.png" alt="Asana" class="w-full h-auto object-contain max-h-20">
                             </div>
-                            <p class="text-sm text-gray-500">Platform Logo</p>
-                            <!-- <img src="path/to/platform-logo-1.png" alt="Platform" class="w-full h-auto object-contain max-h-24"> -->
+                            <p class="text-sm font-semibold navy-text">Asana</p>
                         </div>
                     </div>
+
+                    <!-- Basecamp -->
                     <div class="group relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-cyan-300 hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[180px]">
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-50 transition-colors">
-                                <i data-lucide="image" class="w-10 h-10 text-gray-400"></i>
+                        <div class="text-center w-full">
+                            <div class="w-full h-24 flex items-center justify-center mb-4">
+                                <img src="images/platforms/basecamp.png" alt="Basecamp" class="w-full h-auto object-contain max-h-20">
                             </div>
-                            <p class="text-sm text-gray-500">Platform Logo</p>
-                            <!-- <img src="path/to/platform-logo-2.png" alt="Platform" class="w-full h-auto object-contain max-h-24"> -->
+                            <p class="text-sm font-semibold navy-text">Basecamp</p>
                         </div>
                     </div>
+
+                    <!-- Slack -->
                     <div class="group relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-cyan-300 hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[180px]">
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-50 transition-colors">
-                                <i data-lucide="image" class="w-10 h-10 text-gray-400"></i>
+                        <div class="text-center w-full">
+                            <div class="w-full h-24 flex items-center justify-center mb-4">
+                                <img src="images/platforms/slack.png" alt="Slack" class="w-full h-auto object-contain max-h-20">
                             </div>
-                            <p class="text-sm text-gray-500">Platform Logo</p>
-                            <!-- <img src="path/to/platform-logo-3.png" alt="Platform" class="w-full h-auto object-contain max-h-24"> -->
+                            <p class="text-sm font-semibold navy-text">Slack</p>
                         </div>
                     </div>
+
+                    <!-- Trello -->
                     <div class="group relative bg-white rounded-2xl p-8 border border-gray-200 hover:border-cyan-300 hover:shadow-xl transition-all duration-300 flex items-center justify-center min-h-[180px]">
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-50 transition-colors">
-                                <i data-lucide="image" class="w-10 h-10 text-gray-400"></i>
+                        <div class="text-center w-full">
+                            <div class="w-full h-24 flex items-center justify-center mb-4">
+                                <img src="images/platforms/trello.png" alt="Trello" class="w-full h-auto object-contain max-h-20">
                             </div>
-                            <p class="text-sm text-gray-500">Platform Logo</p>
-                            <!-- <img src="path/to/platform-logo-4.png" alt="Platform" class="w-full h-auto object-contain max-h-24"> -->
+                            <p class="text-sm font-semibold navy-text">Trello</p>
                         </div>
                     </div>
                 </div>
@@ -277,20 +300,10 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-6">
                     <!-- OpenAI -->
                     <div class="group flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-gray-200 hover:border-cyan-300 hover:shadow-lg transition-all duration-300">
-                        <div class="w-28 h-20 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl transition-shadow">
-                            <span class="text-white font-bold text-2xl">S</span>
-                            <!-- <img src="path/to/openai-logo.png" alt="OpenAI" class="w-full h-full object-contain p-2"> -->
+                        <div class="w-28 h-20 bg-white rounded-xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl transition-shadow border border-gray-100">
+                            <img src="images/providers/openai.png" alt="OpenAI" class="w-full h-full object-contain p-2">
                         </div>
                         <span class="text-xs font-semibold navy-text text-center">OpenAI</span>
-                    </div>
-
-                    <!-- Placeholder Box -->
-                    <div class="group flex flex-col items-center justify-center p-6 bg-gray-50 rounded-2xl border-2 border-dashed border-gray-300">
-                        <div class="w-28 h-20 bg-white rounded-xl flex items-center justify-center mb-4 border border-gray-200">
-                            <i data-lucide="plus" class="w-6 h-6 text-gray-400"></i>
-                            <!-- <img src="path/to/logo.png" alt="Provider" class="w-full h-full object-contain p-2"> -->
-                        </div>
-                        <span class="text-xs font-medium text-gray-400 text-center">—</span>
                     </div>
 
                     <!-- Cohere -->
@@ -300,7 +313,7 @@
                                 <div class="w-3 h-3 rounded-full bg-purple-500"></div>
                                 <div class="w-3 h-3 rounded-full bg-pink-500"></div>
                             </div>
-                            <!-- <img src="path/to/cohere-logo.png" alt="Cohere" class="w-full h-full object-contain p-2"> -->
+                            <!-- <img src="images/providers/cohere.png" alt="Cohere" class="w-full h-full object-contain p-2"> -->
                         </div>
                         <span class="text-xs font-semibold text-green-700 text-center">cohere</span>
                     </div>
@@ -314,7 +327,7 @@
                                 <div class="w-2.5 h-2.5 bg-blue-600 rounded-full"></div>
                                 <span class="text-[9px] font-semibold text-blue-600">Meta</span>
                             </div>
-                            <!-- <img src="path/to/llama-meta-logo.png" alt="LLaMA by Meta" class="w-full h-full object-contain p-2"> -->
+                            <!-- <img src="images/providers/llama-meta.png" alt="LLaMA by Meta" class="w-full h-full object-contain p-2"> -->
                         </div>
                         <span class="text-xs font-semibold navy-text text-center">LLaMA by Meta</span>
                     </div>
@@ -323,7 +336,7 @@
                     <div class="group flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-gray-200 hover:border-cyan-300 hover:shadow-lg transition-all duration-300">
                         <div class="w-28 h-20 bg-amber-800 rounded-xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl transition-shadow">
                             <span class="text-white font-bold text-[9px] uppercase tracking-tight px-2 text-center">ANTHROPIC</span>
-                            <!-- <img src="path/to/anthropic-logo.png" alt="Anthropic" class="w-full h-full object-contain p-2"> -->
+                            <!-- <img src="images/providers/anthropic.png" alt="Anthropic" class="w-full h-full object-contain p-2"> -->
                         </div>
                         <span class="text-xs font-semibold navy-text text-center">Anthropic</span>
                     </div>
@@ -332,7 +345,7 @@
                     <div class="group flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-gray-200 hover:border-cyan-300 hover:shadow-lg transition-all duration-300">
                         <div class="w-28 h-20 bg-yellow-50 rounded-xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl transition-shadow border border-yellow-100">
                             <span class="text-4xl">😊</span>
-                            <!-- <img src="path/to/huggingface-logo.png" alt="Hugging Face" class="w-full h-full object-contain p-2"> -->
+                            <!-- <img src="images/providers/huggingface.png" alt="Hugging Face" class="w-full h-full object-contain p-2"> -->
                         </div>
                         <span class="text-xs font-semibold navy-text text-center">Hugging Face</span>
                     </div>
@@ -350,7 +363,7 @@
                                     <div class="w-3 h-3 bg-red-500 rounded-sm"></div>
                                 </div>
                             </div>
-                            <!-- <img src="path/to/databricks-logo.png" alt="Databricks" class="w-full h-full object-contain p-2"> -->
+                            <!-- <img src="images/providers/databricks.png" alt="Databricks" class="w-full h-full object-contain p-2"> -->
                         </div>
                         <span class="text-xs font-semibold navy-text text-center">databricks</span>
                     </div>
@@ -359,7 +372,7 @@
                     <div class="group flex flex-col items-center justify-center p-6 bg-white rounded-2xl border border-gray-200 hover:border-cyan-300 hover:shadow-lg transition-all duration-300">
                         <div class="w-28 h-20 bg-blue-50 rounded-xl flex items-center justify-center mb-4 shadow-md group-hover:shadow-xl transition-shadow border border-blue-100">
                             <div class="text-blue-600 text-4xl">❄</div>
-                            <!-- <img src="path/to/snowflake-logo.png" alt="Snowflake" class="w-full h-full object-contain p-2"> -->
+                            <!-- <img src="images/providers/snowflake.png" alt="Snowflake" class="w-full h-full object-contain p-2"> -->
                         </div>
                         <span class="text-xs font-semibold text-blue-600 text-center">snowflake</span>
                     </div>
@@ -700,21 +713,47 @@
 
     <!-- Exit Intent Popup -->
     <div id="exitIntentPopup" class="popup-overlay">
-        <div class="popup-content">
-            <button id="closePopup" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer">
+        <div class="popup-content" style="max-width: 640px;">
+            <button id="closePopup" class="absolute top-5 right-5 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer z-10">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
-            <div class="text-center">
-                <div class="w-20 h-20 cyan-bg rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="presentation" class="w-10 h-10 text-white"></i>
+            <div>
+                <!-- Webinar Header -->
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 cyan-bg rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="presentation" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold navy-text mb-3">
+                        Fragmented Systems & Data
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Siloed internal systems hinder effective service.
+                    </p>
                 </div>
-                <h3 class="text-3xl font-bold navy-text mb-4">
-                    Fragmented Systems & Data
-                </h3>
-                <p class="text-gray-600 mb-8 leading-relaxed text-lg">
-                    Siloed internal systems hinder effective service.
-                </p>
-                <button class="cyan-bg hover:bg-cyan-600 text-white px-10 py-4 rounded-lg font-semibold transition-colors w-full text-lg">
+
+                <!-- Speaker Section -->
+                <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-6 mb-6 border border-cyan-100">
+                    <div class="flex flex-col md:flex-row items-center gap-6">
+                        <!-- Speaker Image -->
+                        <div class="flex-shrink-0">
+                            <img src="images/Pradeep Goshetty.jpg" alt="Pradeep Kumar Goshetty" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg">
+                        </div>
+                        <!-- Speaker Bio -->
+                        <div class="flex-1 text-left">
+                            <h4 class="text-xl font-bold navy-text mb-1">Pradeep Kumar Goshetty</h4>
+                            <p class="text-sm font-semibold cyan-text mb-3">AVP – Data Science & AI</p>
+                            <p class="text-sm text-gray-700 leading-relaxed mb-2">
+                                <strong>23 years of experience</strong> spanning established multinationals and disruptive startups. Early adopter of analytics, pioneering the creation of accounts, practices, departments, and enterprises from the ground up.
+                            </p>
+                            <p class="text-xs text-gray-600 italic">
+                                Former leadership roles at Numerify, ServiceRocket, and Valiantys
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <button class="cyan-bg hover:bg-cyan-600 text-white px-10 py-4 rounded-lg font-semibold transition-colors w-full text-lg shadow-lg hover:shadow-xl">
                     Join Free Webinar for RMs in Banking
                 </button>
             </div>
